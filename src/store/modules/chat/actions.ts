@@ -261,8 +261,7 @@ const actions: ActionTree<ChatState, RootState> = {
                   avatar: res.avatar,
                 };
                 console.log(state.groupShowMsg, 'get connect msg');
-                if (state.groupShowMsg[gm.groupId] == undefined
-                  || state.groupShowMsg[gm.groupId][gm.watermark] == undefined) {
+                if (state.groupShowMsg[gm.groupId] == undefined || state.groupShowMsg[gm.groupId][gm.watermark] == undefined) {
                   console.log(state.groupGather[gm.groupId]);
                   commit(ADD_GROUP_MESSAGE, gm);
                 }
@@ -339,7 +338,7 @@ const actions: ActionTree<ChatState, RootState> = {
                   console.log(activeRoom, 'activeRoom');
                   console.log(state.unReadGather);
                   if (activeRoom && (activeRoom.groupId || (activeRoom.userid !== fm.userid && activeRoom.userid !== fm.friendId))) {
-                    console.log("一条未读消息")
+                    console.log('一条未读消息');
                     // 如果不在对应的聊天框，则以未读消息的格式提示
                     if (fm.userid !== user.userid) {
                       commit(ADD_UNREAD_GATHER, 'user_' + fm.userid);

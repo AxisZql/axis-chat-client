@@ -10,11 +10,11 @@
         @close="toggleGroupUser"
         :wrap-style="{ position: 'absolute' }"
       >
-        <div class="active-content" v-if="activeGroupUser['group_'+activeRoom.groupId]">
+        <div class="active-content" v-if="activeGroupUser['group_' + activeRoom.groupId]">
           <div class="actiev-content-title">群聊管理</div>
           <div class="active-content-sum">在线人数: {{ activeNum }}</div>
           <div class="active-content-users">
-            <div class="active-content-user" v-for="data in activeGroupUser['group_'+activeRoom.groupId]" :key="data.userid">
+            <div class="active-content-user" v-for="data in activeGroupUser['group_' + activeRoom.groupId]" :key="data.userid">
               <genal-avatar :data="data" :showTime="false"></genal-avatar>
               {{ data.username }}
             </div>

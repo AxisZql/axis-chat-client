@@ -99,7 +99,7 @@ export default class GenalChat extends Vue {
       };
       // 通过token获取用户信息
       this.handleGetUserInfo(req);
-      this.getChatDataAfterLogin(req);// 获取历史聊天记录·
+      this.getChatDataAfterLogin(req); // 获取历史聊天记录·
     }
   }
 

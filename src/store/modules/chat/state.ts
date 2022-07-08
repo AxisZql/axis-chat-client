@@ -11,7 +11,7 @@ export interface ChatState {
   friendGather: FriendGather; // 记录所有好友信息
   groupShowMsg: GroupMsgMap; //已经显示当前用户发送群聊的消息记录
   friendShowMsg: FriendMsgMap;
-  unReadGather: UnReadGather;//记录用户未读消息
+  unReadGather: UnReadGather; //记录用户未读消息
 }
 
 const chatState: ChatState = {

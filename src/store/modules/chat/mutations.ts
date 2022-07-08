@@ -107,7 +107,7 @@ const mutations: MutationTree<ChatState> = {
   // 设置私聊记录
   [SET_FRIEND_MESSAGES](state, payload: FriendMessage[]) {
     // @ts-ignore
-    let userId = this.getters['app/user'].userId;
+    let userId = this.getters['app/user'].userid;
     if (payload && payload.length) {
       if (payload[0].friendId === userId) {
         Vue.set(state.friendGather['user_' + payload[0].userid], 'messages', payload);
@@ -126,7 +126,6 @@ const mutations: MutationTree<ChatState> = {
     } else {
       Vue.set(state.unReadGather, 'user_' + payload.userid, 0);
     }
-
   },
 
   // 设置所有的群的群详细信息(头像,群名字等)
@@ -181,7 +180,7 @@ const mutations: MutationTree<ChatState> = {
       Vue.set(state.groupShowMsg, payload.groupId, {});
     }
     Vue.set(state.groupShowMsg[payload.groupId], payload.watermark, true);
-  }
+  },
 };
 
 export default mutations;

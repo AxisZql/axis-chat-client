@@ -17,5 +17,5 @@ export const SET_GROUP_ALL_USER = 'set_group_all_user'; //设置群聊所有成�
 export const SET_GROUP_ONLINE_USER_COUNT = 'set_group_online_user_count';
 export const DEAL_FRIEND_OFF = 'deal_friend_off'; //处理好友下线事件
 export const DEAL_FRIEND_ON = 'deal_friend_on'; //处理好友上线事件
-export const SET_FRIEND_SHOW_MSG = 'set_friend_show_msg';// 设置当前用户已经显示的发送消息
+export const SET_FRIEND_SHOW_MSG = 'set_friend_show_msg'; // 设置当前用户已经显示的发送消息
 export const SET_GROUP_SHOW_MSG = 'set_group_show_msg';

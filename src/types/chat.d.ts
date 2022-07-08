@@ -25,8 +25,8 @@ interface Group {
 // 当前用户发送的群聊消息已经显示记录
 interface GroupMsgMap {
   [groupId: number]: {
-    [watermark: number]: boolean
-  }
+    [watermark: number]: boolean;
+  };
 }
 
 // 群与用户关联表
@@ -72,8 +72,8 @@ interface Friend {
 // 当前用户发送的私聊消息已经显示记录
 interface FriendMsgMap {
   [friendId: number]: {
-    [watermark: number]: boolean
-  }
+    [watermark: number]: boolean;
+  };
 }
 
 // 用户与好友关联表

@@ -14,7 +14,7 @@
       <a-icon type="bulb" class="tool-tip icon" />
     </a-tooltip>
     <a-icon type="skin" class="tool-skin icon" @click="showBackgroundModal = true" />
-    <a href="https://github.com/genaller/genal-chat" target="_blank" class="tool-github icon"><a-icon type="github"/></a>
+    <a href="https://github.com/AxisZql/axis-chat-server" target="_blank" class="tool-github icon"><a-icon type="github"/></a>
     <a-icon class="tool-out icon" type="poweroff" @click="logout" />
     <a-modal title="用户信息" :visible="showUserModal" footer="" @cancel="showUserModal = false">
       <div class="tool-user">
@@ -74,24 +74,24 @@
           class="recommend"
           @click="
             setBackground(
-              'https://images.weserv.nl/?url=https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/23fa890c0c244db1b2d6e0927113475c~tplv-k3u1fbpfcp-zoom-1.image?imageView2/2/w/800/q/85'
+              'https://static.axiszql.com/articles/d7939366388fd5cc6e78252444e65429.jpeg'
             )
           "
         >
           <img
-            src="https://images.weserv.nl/?url=https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/23fa890c0c244db1b2d6e0927113475c~tplv-k3u1fbpfcp-zoom-1.image?imageView2/2/w/800/q/85"
+            src="https://static.axiszql.com/articles/d7939366388fd5cc6e78252444e65429.jpeg"
             alt=""
           />
-          <span class="text">阿童木</span>
+          <span class="text">原神</span>
         </div>
         <div
           class="recommend"
           @click="
-            setBackground('https://images.weserv.nl/?url=https://raw.githubusercontent.com/alexanderbast/vscode-snazzy/master/sample.jpg')
-          "
+            setBackground('https://static.axiszql.com/articles/d0e48d08046f3d411d0100f2d831824c.jpeg'
+            )"
         >
-          <img src="https://images.weserv.nl/?url=https://raw.githubusercontent.com/alexanderbast/vscode-snazzy/master/sample.jpg" alt="" />
-          <span class="text">VSCode摸鱼</span>
+          <img src="https://static.axiszql.com/articles/d0e48d08046f3d411d0100f2d831824c.jpeg" alt="" />
+          <span class="text">山顶的猫</span>
         </div>
         <div
           class="recommend"

@@ -86,7 +86,7 @@ export default class GenalMessage extends Vue {
   messageOpacity: number = 1;
   lastMessagePosition: number = 0;
   spinning: boolean = false;
-  pageSize: number = 30;
+  pageSize: number = 16;
   isNoData: boolean = false;
   lastTime: number = 0;
 
@@ -217,6 +217,14 @@ export default class GenalMessage extends Vue {
   async getGroupMessages() {
     let groupId = this.activeRoom.groupId;
     let current = this.activeRoom.messages!.length;
+    if (current % this.pageSize !== 0) {
+      this.isNoData = true;
+      this.needScrollToBottom = false;
+      return;
+    }
+
+    current = Math.floor(current / this.pageSize) + 1;
+
     let currentMessage = this.activeRoom.messages ? this.activeRoom.messages : [];
     let data: PagingResponse = processReturn(
       await api.getGroupMessages({
@@ -227,7 +235,12 @@ export default class GenalMessage extends Vue {
       })
     );
     if (data) {
-      if (!data.messageArr.length || data.messageArr.length < this.pageSize) {
+      if (!data.messageArr) {
+        this.isNoData = true;
+        this.needScrollToBottom = false;
+        return;
+      }
+      if (data.messageArr.length < this.pageSize) {
         this.isNoData = true;
       }
       this.needScrollToBottom = false;
@@ -247,6 +260,13 @@ export default class GenalMessage extends Vue {
   async getFriendMessages() {
     let friendId = this.activeRoom.userid;
     let current = this.activeRoom.messages!.length;
+    if (current % this.pageSize !== 0) {
+      this.isNoData = true;
+      this.needScrollToBottom = false;
+      return;
+    }
+
+    current = Math.floor(current / this.pageSize) + 1;
     let currentMessage = this.activeRoom.messages ? this.activeRoom.messages : [];
     let data: PagingResponse = processReturn(
       await api.getFriendMessage({
@@ -257,7 +277,13 @@ export default class GenalMessage extends Vue {
       })
     );
     if (data) {
-      if (!data.messageArr.length || data.messageArr.length < this.pageSize) {
+      console.log(data);
+      if (!data.messageArr) {
+        this.isNoData = true;
+        this.needScrollToBottom = false;
+        return;
+      }
+      if (data.messageArr.length < this.pageSize) {
         this.isNoData = true;
       }
       this.needScrollToBottom = false;
