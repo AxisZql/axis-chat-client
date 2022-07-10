@@ -4,6 +4,7 @@ import { RootState } from '../../index';
 import qdWebSocket from '@/utils/ws';
 import Rwebsocket from 'reconnecting-websocket';
 import fetch from '@/api/fetch';
+import { SOCKET_HOST } from '@/const/index';
 import Vue from 'vue';
 import {
   SET_SOCKET,
@@ -68,7 +69,7 @@ const actions: ActionTree<ChatState, RootState> = {
           friendName: payload.get('friendName') + '',
           friendId: Number(payload.get('friendId')),
           createAt: new Date().toJSON(),
-        }
+        };
         commit(ADD_FRIEND_MESSAGE, msg);
         commit(SET_FRIEND_SHOW_MSG, {
           friendId: msg.friendId,
@@ -87,7 +88,7 @@ const actions: ActionTree<ChatState, RootState> = {
           groupName: payload.get('groupName') + '',
           groupId: Number(payload.get('groupId')),
           createAt: new Date().toJSON(),
-        }
+        };
         commit(ADD_GROUP_MESSAGE, msg);
         commit(SET_GROUP_SHOW_MSG, {
           groupId: msg.groupId,
@@ -210,7 +211,7 @@ const actions: ActionTree<ChatState, RootState> = {
 
   // 创建websocket连接并，实时接收connect层推送过来的消息
   async registerWS({ commit, dispatch, state, rootState }, payload: string) {
-    let socket: Rwebsocket = qdWebSocket.initQDWS(`ws:/192.168.101.42:8100/ws`);
+    let socket: Rwebsocket = qdWebSocket.initQDWS(SOCKET_HOST);
     let authReq = {
       accessToken: payload,
     };
@@ -402,12 +403,14 @@ const actions: ActionTree<ChatState, RootState> = {
           friend.messages = [];
         }
         friend.key = 'user_' + friend.friendId;
+        friend.online = 'y';
         commit(SET_FRIEND_GATHER, friend);
         commit(SET_USER_GATHER, friend); //设置记录全局用户的用户表
       }
     }
     if (userArr.length) {
       for (let user of userArr) {
+        user.online = 'y';
         commit(SET_USER_GATHER, user);
       }
     }

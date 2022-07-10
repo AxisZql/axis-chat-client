@@ -15,7 +15,7 @@ const actions: ActionTree<AppState, RootState> = {
     let data = processReturn(res);
     if (data) {
       // commit(SET_USER, data.user);
-      commit(SET_TOKEN, data.data);
+      commit(SET_TOKEN, data);
       return data;
     }
   },

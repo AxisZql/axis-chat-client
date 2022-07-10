@@ -111,6 +111,7 @@ export default class GenalChat extends Vue {
         accessToken: this.token,
       };
       this.handleGetUserInfo(req);
+      this.getChatDataAfterLogin(req); // 获取历史聊天记录·
     }
   }
 

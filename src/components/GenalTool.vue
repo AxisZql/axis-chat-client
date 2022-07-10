@@ -70,26 +70,11 @@
         <a-button type="primary" @click="changeBackground">确认</a-button>
       </div>
       <div class="tool-recommend">
-        <div
-          class="recommend"
-          @click="
-            setBackground(
-              'https://static.axiszql.com/articles/d7939366388fd5cc6e78252444e65429.jpeg'
-            )
-          "
-        >
-          <img
-            src="https://static.axiszql.com/articles/d7939366388fd5cc6e78252444e65429.jpeg"
-            alt=""
-          />
+        <div class="recommend" @click="setBackground('https://static.axiszql.com/articles/d7939366388fd5cc6e78252444e65429.jpeg')">
+          <img src="https://static.axiszql.com/articles/d7939366388fd5cc6e78252444e65429.jpeg" alt="" />
           <span class="text">原神</span>
         </div>
-        <div
-          class="recommend"
-          @click="
-            setBackground('https://static.axiszql.com/articles/d0e48d08046f3d411d0100f2d831824c.jpeg'
-            )"
-        >
+        <div class="recommend" @click="setBackground('https://static.axiszql.com/articles/d0e48d08046f3d411d0100f2d831824c.jpeg')">
           <img src="https://static.axiszql.com/articles/d0e48d08046f3d411d0100f2d831824c.jpeg" alt="" />
           <span class="text">山顶的猫</span>
         </div>

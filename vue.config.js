@@ -1,8 +1,5 @@
-// const Host = 'http://localhost:3000'; // 后端地址
-// const HOST = 'http://localhost:8100/ws'
-const API_HOST = 'http://localhost:8090';
-const SOCKET_HOST = 'http://localhost:8100';
-// const SOCKET_HOST = 'http://localhost:8000';
+const API_HOST = 'https://chat.axiszql.com';
+
 const webpack = require('webpack');
 
 // cdn链接
