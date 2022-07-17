@@ -1,5 +1,7 @@
 import Vue from 'vue';
 import { AxiosResponse } from 'axios';
+// 引入moment
+// import moment from 'moment';
 
 // 处理所有后端返回的数据
 export function processReturn(res: AxiosResponse<ServerRes>) {
@@ -43,18 +45,18 @@ export function isUrl(text: string) {
  * @param time
  */
 export function formatTime(timeStr: string) {
-  let moment = Vue.prototype.$moment;
+  var moment = require('@/utils/moment.min.js');
   let time = new Date(timeStr).valueOf();
   // 大于昨天
   if (
     moment()
       .add(-1, 'days')
-      .startOf('day') > time
+      .startOf('day') > moment(time)
   ) {
     return moment(time).format('M/D HH:mm');
   }
   // 昨天
-  if (moment().startOf('day') > time) {
+  if (moment().startOf('day') > moment(time)) {
     return '昨天 ' + moment(time).format('HH:mm');
   }
   // 大于五分钟不显示秒

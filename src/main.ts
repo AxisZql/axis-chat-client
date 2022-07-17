@@ -9,10 +9,8 @@ Vue.config.productionTip = false;
 // 引入ant-desigin
 import './ant-desigin';
 
-// 引入moment
-import moment from 'moment';
 // 使用中文时间
-Vue.prototype.$moment = moment;
+// Vue.prototype.$moment = moment;
 
 // 图片预览插件
 import 'viewerjs/dist/viewer.css';
